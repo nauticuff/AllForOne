@@ -1,3 +1,7 @@
+html {
+  min-width: 1200px;
+}
+
 body {
   margin: 1.5rem;
   font-family: "Poppins", sans-serif;
@@ -5,7 +9,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1920px;
+  max-width: 1200px;
   margin: 3rem auto;
 }
 
@@ -83,7 +87,7 @@ main .hero .row .col-2 {
 }
 main .hero .row .col-2 .arrow {
   position: absolute;
-  bottom: 3rem;
+  bottom: 11rem;
   animation: moveArrow 1s alternate-reverse infinite;
 }
 main .bar {
@@ -123,9 +127,6 @@ main .col-8 .text-3 {
   position: absolute;
   bottom: 100px;
   right: 10px;
-}
-main .ch-heading {
-  margin-top: 6rem;
 }
 main .row {
   display: flex;
