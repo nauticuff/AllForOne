@@ -4,16 +4,23 @@ let directoryBtn = document.getElementById('directoryBtn').addEventListener('cli
     directoryApi(firstNameInput.value)
 })
 
-function directoryApi(firstNameInput) { 
-    studentDirectoryUrl = `https://afoday2carlos.azurewebsites.net/studentdirectory/getstudentbyfirstname/${firstNameInput}`
+function directoryApi(info) { 
+    studentDirectoryUrl = `https://afoday2carlos.azurewebsites.net/studentdirectory/getstudentbyinfo/${info}`
     urlCall8(studentDirectoryUrl)
 }
 
 function urlCall8(url){
     fetch(url).then(
-        response => response.text()
+        response => response.json()
     ).then(
-        data => ch8Inject.innerHTML = data
+        data => {
+            firstNameInject.innerHTML = data.firstName
+            lastNameInject.innerHTML = data.lastName
+            slackNameInject.innerHTML = data.slackName
+            emailInject.innerHTML = data.email
+
+            console.log(data)     
+        }
     )
 }
 
