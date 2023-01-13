@@ -9,3 +9,5 @@ menu.addEventListener('click', () => {
 close.addEventListener('click', () => {
     nav.classList.remove('open-nav')
 })
+
+

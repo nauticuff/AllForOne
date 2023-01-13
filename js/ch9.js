@@ -1,18 +1,19 @@
-let cuisine = 'asian';
+let cuisineInput = document.getElementById('cuisineInput');
 
-function pickerApi(nameInput) { 
+let pickerBtn = document.getElementById('pickerBtn').addEventListener('click', () => {
+    pickerApi(cuisineInput.value)
+})
+
+function pickerApi(cuisine) { 
     restaurantUrl = `https://afoday2carlos.azurewebsites.net/category/${cuisine}`
-    urlCall(restaurantUrl)
+    urlCall9(restaurantUrl)
 }
 
-function urlCall(url){
+function urlCall9(url){
     fetch(url).then(
         response => response.text()
     ).then(
-        data => {
-            console.log(data)
-        }
+        data => ch9Inject.innerHTML = data
     )
 }
 
-pickerApi(cuisine);

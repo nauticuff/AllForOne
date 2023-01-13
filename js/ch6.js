@@ -1,18 +1,19 @@
-let oeNum = 17;
+let oeNum = document.getElementById('oeNum')
 
-function determineApi(nameInput) { 
-    OddEvenUrl = `https://afoday2carlos.azurewebsites.net/oddoreven/${oeNum}` 
-    urlCall(OddEvenUrl)
+let determineBtn = document.getElementById('determineBtn').addEventListener('click', () => {
+    determineApi(oeNum.value)
+})
+
+function determineApi(input) { 
+    OddEvenUrl = `https://afoday2carlos.azurewebsites.net/oddoreven/${input}` 
+    urlCall6(OddEvenUrl)
 }
 
-function urlCall(url){
+function urlCall6(url){
     fetch(url).then(
         response => response.text()
     ).then(
-        data => {
-            console.log(data)
-        }
+        data => ch6Inject.innerHTML = data
     )
 }
 
-determineApi(oeNum);

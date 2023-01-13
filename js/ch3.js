@@ -1,20 +1,20 @@
-let firstQuestionInput = 'Carlos';
-let secondQuestionInput = '8am';
+let firstQInput = document.getElementById('firstQInput');
+let secondQInput = document.getElementById('secondQInput')
 
-askApi(firstQuestionInput, secondQuestionInput);
+let akBtn = document.getElementById('akBtn').addEventListener('click', () => {
+    askApi(firstQInput.value, secondQInput.value)
+})
 
 function askApi(firstQuestionInput, secondQuestionInput) { 
     askingQuestionsUrl = 'https://afoday2carlos.azurewebsites.net/questions/' + firstQuestionInput + '/' + secondQuestionInput
-    urlCall(askingQuestionsUrl)
+    urlCall3(askingQuestionsUrl)
 }
 
-function urlCall(url){
+function urlCall3(url){
     fetch(url).then(
         response => response.text()
     ).then(
-        data => {
-            console.log(data)
-        }
+        data => ch3Inject.innerHTML = data
     )
 }
 
